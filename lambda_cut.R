@@ -103,3 +103,10 @@ print(mat)
 mat = do_lambdacut(mat, 0.80)
 print(mat)
 print(get_class(mat))
+
+temp = read.csv("soft_computing/iris.data", sep=",",header=FALSE,colClasses=c("numeric",
+                                                                              "numeric","numeric","numeric","character"))
+m = mean(temp[,1])
+s = sd(temp[,1])
+zs = (temp[,1] - m)/s
+temp[,1] = zs
